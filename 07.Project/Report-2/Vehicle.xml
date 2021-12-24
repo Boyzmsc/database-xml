@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Vehicles xmlns="http://www.example.com/Vehicle" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.example.com/Vehicle Vehicle.xsd">
+	
+	<Vehicle xsi:type="AutomobileType">
+		<Body>4 Door Body</Body>
+		<DriveTrain>
+			<Engine>Auto Engine</Engine>
+			<Transmission>Auto Trans</Transmission>
+		</DriveTrain>
+		<Trunk>Basic Truck</Trunk>
+	</Vehicle>
+	<Vehicle xsi:type="SedanType">
+		<Body>4 Door Body</Body>
+		<DriveTrain>
+			<Engine>Sedan Engine</Engine>
+			<Transmission>Sedan Trans</Transmission>
+		</DriveTrain>
+		<Trunk>Basic Truck</Trunk>
+	</Vehicle>
+	<Vehicle xsi:type="ConvertibleType">
+		<Body>4 Door Body</Body>
+		<DriveTrain>
+			<Engine>Convertible Engine</Engine>
+			<Transmission>Convertible Trans</Transmission>
+		</DriveTrain>
+		<Trunk>Basic Truck</Trunk>
+		<OperatingRoof>Auto Roof</OperatingRoof>
+	</Vehicle>
+	<Vehicle xsi:type="TruckType">
+		<Body>4 Door Body</Body>
+		<DriveTrain>
+			<Engine>Truck Engine</Engine>
+			<Transmission>Truck Trans</Transmission>
+		</DriveTrain>
+		<Compartment>Basic</Compartment>
+	</Vehicle>
+</Vehicles>

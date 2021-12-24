@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:db="http://www.example.com/Vehicle" 
+	targetNamespace="http://www.example.com/Vehicle" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+	
+	<element name="Vehicle" type="db:VehicleType"/>
+	<complexType name="VehicleType">
+		<sequence>
+			<element name="Body" type="db:BodyType"/>
+			<element name="DriveTrain" type="db:DriveTrainType"/>
+		</sequence>
+	</complexType>
+	<complexType name="BodyType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="DriveTrainType">
+		<sequence>
+			<element name="Engine" type="db:EngineType"/>
+			<element name="Transmission" type="db:TransmissionType"/>
+		</sequence>
+	</complexType>
+	<complexType name="EngineType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="TransmissionType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="AutomobileType">
+		<complexContent>
+			<extension base="db:VehicleType">
+				<sequence>
+					<element name="Trunk" type="db:TrunkType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TrunkType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="SedanType">
+		<complexContent>
+			<extension base="db:AutomobileType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="ConvertibleType">
+		<complexContent>
+			<extension base="db:AutomobileType">
+				<sequence>
+					<element name="OperatingRoof" type="db:OperatingRoofType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="OperatingRoofType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="TruckType">
+		<complexContent>
+			<extension base="db:VehicleType">
+				<sequence>
+					<element name="Compartment" type="db:CompartmentType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CompartmentType">
+		<simpleContent>
+			<extension base="string"/>
+		</simpleContent>
+	</complexType>
+	<element name="Vehicles">
+		<complexType>
+			<sequence>
+				<element ref="db:Vehicle" minOccurs="1" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
